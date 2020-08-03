@@ -18,8 +18,11 @@ function openShare(desktopMatch) {
 	const shareDOM = document.getElementsByClassName("post-share")[0];
 
 	if (shareDOM) {
-
 		if (desktopMatch.matches) {
+			const btnDOM = document.getElementsByClassName("post-author")[0].getElementsByClassName("post-share-btn")[0];
+			btnDOM.style.backgroundColor = "hsl(214, 17%, 51%)";
+			btnDOM.getElementsByTagName('svg')[0].getElementsByTagName('path')[0].style.fill = "white";
+
 			shareDOM.style.clipPath = "circle(200% at 46% 165%)"
 		} else {
 			shareDOM.style.clipPath = "circle(200% at calc(100% - 50px) center)"
@@ -34,6 +37,10 @@ function closeShare(desktopMatch) {
 	if (shareDOM) {
 
 		if (desktopMatch.matches) {
+			const btnDOM = document.getElementsByClassName("post-author")[0].getElementsByClassName("post-share-btn")[0];
+			btnDOM.style.backgroundColor = "hsl(210, 46%, 95%)";
+			btnDOM.getElementsByTagName('svg')[0].getElementsByTagName('path')[0].style.fill = "rgb(110, 128, 152)";
+
 			shareDOM.style.clipPath = "circle(0 at 46% 165%)"
 		} else {
 			shareDOM.style.clipPath = "circle(0 at calc(100% - 50px) center)"
